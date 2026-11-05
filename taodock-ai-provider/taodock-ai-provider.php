@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       TaoDock AI Provider
+ * Plugin Name:       TaoDock AI – 40+ AI Models (GPT, Claude, Gemini)
  * Plugin URI:        https://github.com/taodock-api/taodock-wordpress
  * Description:       Connects the WordPress AI Client to TaoDock text models.
  * Version:           1.0.0

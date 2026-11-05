@@ -1,4 +1,4 @@
-# TaoDock AI Provider for WordPress
+# TaoDock AI for WordPress – 40+ AI Models (GPT, Claude, Gemini)
 
 [![Verify](https://github.com/taodock-api/taodock-wordpress/actions/workflows/verify.yml/badge.svg)](https://github.com/taodock-api/taodock-wordpress/actions/workflows/verify.yml)
 [![WordPress: 7.0+](https://img.shields.io/badge/WordPress-7.0%2B-21759b?logo=wordpress&logoColor=white)](https://wordpress.org/)
@@ -54,7 +54,7 @@ Run the packaging step and upload the zip through
 ### Install from source
 
 Copy the `taodock-ai-provider` directory into `wp-content/plugins` and activate
-**TaoDock AI Provider**.
+**TaoDock AI**.
 
 ## How it works
 

@@ -1,4 +1,4 @@
-=== TaoDock AI Provider ===
+=== TaoDock AI – 40+ AI Models (GPT, Claude, Gemini) ===
 Tags: ai, text generation, api, gateway
 Requires at least: 7.0
 Tested up to: 7.1
@@ -33,7 +33,7 @@ https://taodock.com/usage-logs/common.
 
 == Installation ==
 
-1. Upload and activate TaoDock AI Provider.
+1. Upload and activate TaoDock AI.
 2. Open Settings > Connectors.
 3. Select TaoDock and enter an API key.
 4. Use a WordPress feature that supports the AI Client.
