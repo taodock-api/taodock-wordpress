@@ -1,0 +1,18 @@
+{
+  "name": "@taodock/wordpress-ai-provider",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TaoDock provider integration for the WordPress AI Client",
+  "license": "GPL-2.0-or-later",
+  "author": "TaoDock",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taodock-api/taodock-wordpress.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}

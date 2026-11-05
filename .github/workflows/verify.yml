@@ -1,0 +1,49 @@
+name: Verify
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - wordpress: '7.0'
+            php: '8.0'
+          - wordpress: '7.1'
+            php: '8.4'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+      - name: Install quality tools
+        run: composer install --no-interaction --prefer-dist
+      - name: Download WordPress
+        run: |
+          curl --fail --location --silent --show-error \
+            https://github.com/WordPress/WordPress/archive/refs/tags/${{ matrix.wordpress }}.tar.gz \
+            --output /tmp/wordpress.tar.gz
+          tar -xzf /tmp/wordpress.tar.gz -C /tmp
+      - name: Check PHP syntax
+        run: find taodock-ai-provider tests -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Run PHP style and compatibility checks
+        run: composer lint
+      - name: Audit PHP development dependencies
+        run: composer audit
+      - name: Run regression checks
+        env:
+          WP_AI_CLIENT_AUTOLOAD: /tmp/WordPress-${{ matrix.wordpress }}/wp-includes/php-ai-client/autoload.php
+        run: php tests/run.php
+      - name: Build and inspect the plugin archive
+        run: |
+          npm run build
+          unzip -t dist/taodock-ai-provider.zip
